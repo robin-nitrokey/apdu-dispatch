@@ -16,6 +16,9 @@ pub mod response {
     pub type Data = iso7816::Data<SIZE>;
 }
 
+pub const DATA_SIZE: usize = 3072;
+pub type Data = iso7816::Data<DATA_SIZE>;
+
 // What apps can expect to send and recieve.
 pub type Command = iso7816::Command<{command::SIZE}>;
 pub type Response = iso7816::Response<{response::SIZE}>;
@@ -23,4 +26,3 @@ pub type Response = iso7816::Response<{response::SIZE}>;
 pub mod app;
 pub use app::App;
 pub mod dispatch;
-pub mod interchanges;
